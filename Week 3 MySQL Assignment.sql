@@ -2,24 +2,24 @@ CREATE DATABASE IF NOT EXISTS customers;
 USE customers;
 
 CREATE TABLE `Users` (
-	`user_id` INT NOT NULL AUTO_INCREMENT,
-	`username` varchar(255) NOT NULL UNIQUE,
-	`email` varchar(255),
-	`password` varchar(255) NOT NULL,
+	`user_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`username` varchar(30) NOT NULL UNIQUE,
+	`email` varchar(60),
+	`password` varchar(60) NOT NULL,
 	PRIMARY KEY (`user_id`)
 );
 
 CREATE TABLE `Posts` (
-	`post_id` INT NOT NULL AUTO_INCREMENT,
-	`user_id` INT NOT NULL,
+	`post_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`user_id` INT(11) NOT NULL,
 	`post` TEXT,
 	PRIMARY KEY (`post_id`)
 );
 
 CREATE TABLE `Comments` (
-	`comment_id` INT NOT NULL AUTO_INCREMENT,
-	`user_id` INT NOT NULL,
-	`post_id` INT NOT NULL,
+	`comment_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`user_id` INT(11) NOT NULL,
+	`post_id` INT(11) NOT NULL,
 	`comment` TEXT NOT NULL,
 	PRIMARY KEY (`comment_id`)
 );
